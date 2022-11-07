@@ -99,7 +99,7 @@ char *morseTranslator::getMorse(char c)
     return this->dic[c];
 }
 
-char *morseTranslator::translate(const char text[])
+char *morseTranslator::translate(const char text[], const bool spacesBetweenLetters = false)
 {
     int lengthText = 0;
     while (text[lengthText] != '\0')
@@ -121,6 +121,12 @@ char *morseTranslator::translate(const char text[])
         while (c[k] != this->blankSpace)
         {
             this->translation[j] = *(c + k);
+            j++;
+            k++;
+        }
+
+        if (spacesBetweenLetters){
+            this->translation[j] = ' ';
             j++;
             k++;
         }

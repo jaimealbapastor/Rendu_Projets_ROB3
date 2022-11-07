@@ -1,18 +1,14 @@
-#ifndef STDINT_H
-#define STDINT_H
-#include <stdint.h>
-#endif
-
 #ifndef MORSE_TRANSLATOR_H
 #define MORSE_TRANSLATOR_H
 
 class morseTranslator
 {
 private:
-    static const uint8_t morseLength = 6;
+    static const int morseLength = 6;
     const char blankSpace = '\0';
 
-    static const int translationLength = morseLength * 1024;
+    static const int textToTranslateLength = 1024;
+    static const int translationLength = morseLength * textToTranslateLength;
     char translation[translationLength];
 
     char dic[127][morseLength];
@@ -23,6 +19,7 @@ private:
 public:
     morseTranslator();
     ~morseTranslator();
+    char *getLastTranslation();
 
     /**
      * @brief translates text into morse code
@@ -30,6 +27,7 @@ public:
      * @param text the sentence to translate
      * @return char* containing the char list representing morse
      */
-    char *translate(const char text[]);
+    char *translate(const char text[], const bool spacesBetweenLetters = true);
+    
 };
 #endif

@@ -1,3 +1,6 @@
+// À utiliser dans le terminal c++
+// https://www.onlinegdb.com/online_c++_compiler
+
 #ifndef IOSTREAM
 #define IOSTREAM
 #include <iostream>
@@ -7,13 +10,11 @@
 using namespace std;
 
 morseTranslator morse;
+char *s;
 
 int main()
 {
-
-    char *s;
-
-    s = morse.translate("a b c");
+    s = morse.translate("Hello World");
 
     cout << "Traduction: ";
     while (*s != '\0')
