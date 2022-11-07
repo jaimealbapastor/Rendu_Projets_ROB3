@@ -1,5 +1,10 @@
 #include "morseTranslator.h"
 
+#ifndef IOSTREAM
+#define IOSTREAM
+#include <iostream>
+#endif
+
 void morseTranslator::addMorseToDic(char c, const char morse[])
 {
 
@@ -82,6 +87,7 @@ morseTranslator::morseTranslator()
     this->addMorseToDic('8', "---..");
     this->addMorseToDic('9', "----.");
     this->addMorseToDic('0', "-----");
+    this->addMorseToDic(' ', " ");
 }
 
 morseTranslator::~morseTranslator()
@@ -103,13 +109,26 @@ char *morseTranslator::translate(const char text[])
     // char translation[lengthTranslation]; -> storage size of 'translation' isn't constant
 
     char *c;
-    for (int i = 0; i < lengthText; i++)
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while (i < lengthText)
     {
         c = this->getMorse(text[i]);
-        for (uint8_t j = 0; j < this->morseLength; j++)
+        std::cout << text[i] << ": " << c << "\n";
+
+        k = 0;
+        while (c[k] != this->blankSpace)
         {
-            this->translation[i + j] = *(c + j);
+            this->translation[j] = *(c + k);
+            j++;
+            k++;
         }
+
+        i++;
     }
-    return translation;
+    for (j; j < this->translationLength; j++)
+        this->translation[j] = this->blankSpace;
+
+    return this->translation;
 }

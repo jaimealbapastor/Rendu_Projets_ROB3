@@ -18,7 +18,7 @@ private:
     char dic[127][morseLength];
 
     void addMorseToDic(char c, const char morse[]);
-    char* getMorse(char c);
+    char *getMorse(char c);
 
 public:
     morseTranslator();
