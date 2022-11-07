@@ -1,3 +1,5 @@
+// not tested yet
+
 #include "morseTranslator.h"
 
 const char DOT = '.';
