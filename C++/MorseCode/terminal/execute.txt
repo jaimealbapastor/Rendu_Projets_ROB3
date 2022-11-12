@@ -1,0 +1,5 @@
+cd "c:\Users\Jaime\Documents\GitHub\Rendu_Projets\C++\MorseCode\" ; if ($?) { g++ main.cpp morseTranslator.cpp -o main } ; if ($?) { .\main }
+
+ou
+
+https://www.onlinegdb.com/online_c++_compiler
