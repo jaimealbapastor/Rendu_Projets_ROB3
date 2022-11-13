@@ -1,5 +1,7 @@
 # Setup MySQL
 
+<!-- https://appdevtools.com/pastebin/z4VN5K -->
+
 Pour le setup de MySQL j'ai suivi le tutoriel détaillé de [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04)
 
 ## Installer MySQL
@@ -78,6 +80,62 @@ mysql> FLUSH PRIVILEGES;
 
 ![5](./images/5.png)
 
-# Importer la base de données
+On peut maintenant y accéder avec le nouvel utilisateur:
+```shell
+$ mysql -u jaime -p
+```
 
-dfkglñ
+Vérifions que MySQL s'exécute correctement:
+```shell
+$ systemctl status mysql.service
+```
+
+On obtient bien que MySQL est en exécution:  
+![6](./images/6.png)  
+
+> Si ce n'est pas le cas on peut l'exécuter avec la commande:
+>```shell
+>$ sudo systemctl start mysql
+>```
+
+## Importer la base de données
+
+L'explication suivante est mon premier essai en suivant l'aide en ligne. Vous trouverez après la bonne exécution.
+
+>Depuis un utilisateur avec des droits, on crée une base de données.
+>
+>![7](./images/7.png)  
+>
+>Puis, depuis le terminal, on importe les données:
+>
+>![8](./images/8.png)  
+>Cependant en faisa
+>
+>On observe que `my_sample_database` apparaît dans les bases de données disponibles.  
+>![9](./images/9.png)
+>
+>Cependant lorsqu'on fait `SHOW TABLES;` on n'obtient pas de résultat.  
+>
+>Alors qu'en faisant `SOURCE database.sql;` on obtient bien:
+>![10](./images/10.png)
+>c
+
+***Solution:***
+
+Je n'avais pas remarqué que la database *classicmodels* avait été créée lors de l'importation du fichier .sql  
+J'en ai donc déduit qu'il ne faut créer de base de donnée au préalable  
+
+Tout d'abord on supprime les databases créées:
+![12](./images/12.png)  
+
+Puis on importe le fichier `.sql` sans spécifier la database:
+```shell
+$ mysql -u jaime -p <mysqlsampledatabase.sql
+```
+
+et on l'affiche avec 
+```shell
+mysql> USE classicmodels;
+mysql> SHOW TABLES;
+```
+![13](./images/13.png)  

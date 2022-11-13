@@ -11,7 +11,7 @@ On peut utiliser le compilateur en ligne : [https://www.onlinegdb.com/online_c++
 <br/>
 <br/>
 
-### Attention ! Les codes sont différents
+## Attention ! Les codes sont différents
 
 J'ai voulu optimiser la vitesse d'exécution sur le terminal mais la mémoire utilisée est énorme pour l'arduino.  
 Même si la vitesse n'est pas aussi optimisée, j'ai essayé de reduire au max la mémoire en utilisant des listes de caractères et non pas des String.  
