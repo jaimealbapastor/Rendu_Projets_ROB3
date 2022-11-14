@@ -1,0 +1,8 @@
+[Unit]
+Description=Dump mysql database
+
+[Service]
+ExecStart=/usr/bin/dump-database.sh
+
+[Install]
+WantedBy=multi-userr.target
