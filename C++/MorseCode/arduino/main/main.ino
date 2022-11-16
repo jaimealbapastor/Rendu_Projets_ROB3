@@ -6,9 +6,9 @@ const char DOT = '.';
 const char MINUS = '-';
 int8_t stateOfLed = 0;
 // === Intervals ====
-const uint16_t DOT_DELAY = 500; // in milliseconds
-const uint16_t MINUS_DELAY = 1000;   // in milliseconds
-const uint16_t INTERVAL = 750;  // in milliseconds
+const uint16_t DOT_DELAY = 500;     // in milliseconds
+const uint16_t MINUS_DELAY = 1000;  // in milliseconds
+const uint16_t INTERVAL = 750;      // in milliseconds
 // ===== Timer ======
 unsigned long startMillis;
 unsigned long currentMillis;
@@ -34,7 +34,7 @@ void loop() {
 
 
   if (Serial.available()) {
-    delay(30); // wait for the data to arrive
+    delay(30);  // wait for the data to arrive
 
     incomingBytes = Serial.available();
     char input[incomingBytes + 1];
@@ -54,18 +54,18 @@ void loop() {
     translation = MT.translate(input, true);
     Serial.print("Morse:\t");
     Serial.println(translation);
-    translation_index = 0; // start blinking
+    translation_index = 0;  // start blinking
   }
 
-  if (translation != nullptr and * (translation + translation_index) != '\0') {
+  if (translation != nullptr and *(translation + translation_index) != '\0') {
     ongoingBlinking = true;
     currentMillis = millis();
-    currentChar = * (translation + translation_index);
+    currentChar = *(translation + translation_index);
 
     if (currentChar != DOT and currentChar != MINUS) {
       translation_index++;
     } else if (currentMillis - startMillis >= timeToWait) {
-      if (stateOfLed) { // add an interval between two blinks
+      if (stateOfLed) {  // add an interval between two blinks
         timeToWait = INTERVAL;
       } else {
         Serial.print("translation[");
