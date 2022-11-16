@@ -1,11 +1,7 @@
 // À utiliser dans le terminal c++
 // https://www.onlinegdb.com/online_c++_compiler
 
-#ifndef IOSTREAM
-#define IOSTREAM
 #include <iostream>
-#endif
-
 #include "morseTranslator.h"
 using namespace std;
 

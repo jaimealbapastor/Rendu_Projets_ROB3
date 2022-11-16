@@ -1,10 +1,7 @@
-#ifndef STDINT_H
-#define STDINT_H
-#include <stdint.h>
-#endif
-
 #ifndef MORSE_TRANSLATOR_H
 #define MORSE_TRANSLATOR_H
+
+#include <stdint.h>
 
 class morseTranslator
 {
