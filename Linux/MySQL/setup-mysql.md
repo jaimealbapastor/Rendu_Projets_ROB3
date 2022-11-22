@@ -116,7 +116,7 @@ L'explication suivante est mon premier essai en suivant l'aide en ligne. Vous tr
 >
 >Cependant lorsqu'on fait `SHOW TABLES;` on n'obtient pas de résultat.  
 >
->Alors qu'en faisant `SOURCE database.sql;` on obtient bien:
+>Alors qu'en faisant `SOURCE database.sql;` on obtient bien:  
 >![10](./images/10.png)
 >c
 
@@ -125,7 +125,7 @@ L'explication suivante est mon premier essai en suivant l'aide en ligne. Vous tr
 Je n'avais pas remarqué que la database *classicmodels* avait été créée lors de l'importation du fichier .sql  
 J'en ai donc déduit qu'il ne faut créer de base de donnée au préalable  
 
-Tout d'abord on supprime les databases créées:
+Tout d'abord on supprime les databases créées:  
 ![12](./images/12.png)  
 
 Puis on importe le fichier `.sql` sans spécifier la database:
