@@ -52,10 +52,16 @@ done
 addLog "Succesuflly created: $databaseName backup"
 
 # Contrôle des logs
-# si la poids du fichier $logFile est supérieur au poids maximal
-tmpLog.log=""
-while [ $(wc -c $logFile | awk '{print $1}') -gt 5000 ]; do 
-	tail -n +2 $logFile > tmp.csv && mv tmp.csv books.csv
+# si la poids du fichier $logFile est supérieur au poids maximal alors on supprime les premières lignes
+
+tmpLog="/home/jaime/tmpLog.log"
+if [ ! -f $tmpLog ]; then		# si le fichier n'existe pas, le créer
+	touch $tmpLog
+fi
+
+while [ $(wc -c $logFile | awk '{print $1}') -gt 5000 ]; do
+	tail -n +2 $logFile > $tmpLog
+	cat $tmpLog > $logFile
 done
 
 exit 0

@@ -51,7 +51,6 @@ $ sudo systemctl daemon-reload
 
 Maintenant on active le service et on le démarre.
 ```shell
-$ sudo systemctl enable dump-database.service
 $ sudo systemctl start dump-database.service
 ```
 
