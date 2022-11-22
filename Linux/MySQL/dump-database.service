@@ -1,8 +1,9 @@
 [Unit]
 Description=Dump mysql database
+After=network.target
 
 [Service]
-ExecStart=/usr/bin/dump-database.sh
-
-[Install]
-WantedBy=multi-userr.target
+WorkingDirectory=/home/jaime
+User=jaime
+ExecStart=/usr/local/bin/dump-database.sh
+Type=oneshot

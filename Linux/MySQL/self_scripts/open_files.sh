@@ -1,2 +1,2 @@
-code /usr/bin/dump-database.sh
-code /lib/systemd/system/dump-database.service
+code /usr/local/bin/dump-database.sh
+code /etc/systemd/system/dump-database.service
