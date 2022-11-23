@@ -64,4 +64,9 @@ while [ $(wc -c $logFile | awk '{print $1}') -gt 5000 ]; do		# tant que le poids
 	cat $tmpLog > $logFile										# et quand c'est fait, on réecrit le fichier .log
 done
 
+if [ -f $tmpLog ]; then		# on supprime le fichier temporaire
+	rm $tmpLog
+fi
+
+
 exit 0
