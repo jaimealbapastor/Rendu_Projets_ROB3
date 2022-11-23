@@ -139,12 +139,3 @@ mysql> USE classicmodels;
 mysql> SHOW TABLES;
 ```
 ![13](./images/13.png)
-
-ne pas ajouter password
-mysql -u root -p
-ALTER USER jaime@localhost IDENTIFIED WITH auth_socket
-
-grant all permission
-grant process on *.* to jaime@localhost;
-
-sudo chmod 744 /usr/local/bin/dump-database.sh
