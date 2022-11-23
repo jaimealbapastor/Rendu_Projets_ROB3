@@ -2,12 +2,13 @@
 
 ## Setup
 
-On va tout d'abord créer le fichier `dump-mysql.log` et donner au système des permissions d'écriture:
+On va tout d'abord créer le fichier `dump-mysql.log` et mettre mon utilisateur comme propriétaire du fichier pour pouvoir écrire:
 
 ```shell
 $ sudo touch /var/log/dump-mysql.log
-$ sudo chmod 666 /var/log/dump-mysql.log
+$ sudo chown jaime /var/log/dump-mysql.log
 ```
+<!-- $ sudo chmod 666 /var/log/dump-mysql.log -->
 
 ## Ajouter des logs
 
@@ -16,22 +17,11 @@ J'ai créé une fonction que ajoute un log avec un message passé en paramètre:
 ```bash
 logFile="/var/log/dump-mysql.log"
 addLog() {
-	if [ ! -f $logFile ]; then
-        touch $logFile
-	fi
 	logger -s $1 2>>$logFile
 }
 ```
 
 ### Explication
-
-```bash
-if [ ! -f $logFile ]; then
-    touch $logFile
-fi
-```
-
-Si le fichier log n'existe pas, on le crée. Cependant ceci pose un petit problème parce que le système n'aura pas la permission d'écriture. (il faudrait donc améliorer cette partie dans un futur)
 
 ```bash
 logger -s $1 2>>$logFile

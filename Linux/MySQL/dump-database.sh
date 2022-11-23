@@ -12,9 +12,6 @@ dumpFile="${dumpPath}${dumpName}_${currentDate}.sql"
 # Fonction pour ajouter des logs
 logFile="/var/log/dump-mysql.log"
 addLog() {
-	if [ ! -f $logFile ]; then		# si le fichier n'existe pas, le créer (mais il y aura un problème de permissions dans /var/log/)
-		touch $logFile
-	fi
 	#(echo "$currentDate $1") >>$logFile
 	logger -s $1 2>>$logFile		# on utiliser logger pour le formattage du message
 }
