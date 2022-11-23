@@ -42,8 +42,8 @@ fi
 
 n=1
 for file in $(ls -t $dumpPath$dumpName*); do
-	if [ $n -gt 5 ]; then
-		rm $file
+	if [ $n -gt 5 ]; then				# si n est supérieur à 5
+		rm $file						# alors on suprime les backups anciens
 		addLog "Max capacity reached: removing $file"
 	fi
 	((n = n + 1))
@@ -55,13 +55,13 @@ addLog "Succesuflly created: $databaseName backup"
 # si la poids du fichier $logFile est supérieur au poids maximal alors on supprime les premières lignes
 
 tmpLog="/home/jaime/tmpLog.log"
-if [ ! -f $tmpLog ]; then		# si le fichier n'existe pas, le créer
+if [ ! -f $tmpLog ]; then		# si le fichier temporaire n'existe pas, le créer
 	touch $tmpLog
 fi
 
-while [ $(wc -c $logFile | awk '{print $1}') -gt 5000 ]; do
-	tail -n +2 $logFile > $tmpLog
-	cat $tmpLog > $logFile
+while [ $(wc -c $logFile | awk '{print $1}') -gt 5000 ]; do		# tant que le poids du fichier .log dépasse les 5000 b
+	tail -n +2 $logFile > $tmpLog								# on envoie le contenue à partir de la ligne 2 dans le fichier temporaire
+	cat $tmpLog > $logFile										# et quand c'est fait, on réecrit le fichier .log
 done
 
 exit 0
