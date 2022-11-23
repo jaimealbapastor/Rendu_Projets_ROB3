@@ -1,3 +1,50 @@
-<13>Nov 22 10:17:01 jaime: Succesuflly created: classicmodels backup
-<13>Nov 22 10:20:12 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-10-09-10.sql.bz2
-<13>Nov 22 10:20:12 jaime: Succesuflly created: classicmodels backup
+<13>Nov 22 22:18:58 jaime: Succesuflly created: classicmodels backup
+<13>Nov 22 22:20:13 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-18-41.sql.bz2
+<13>Nov 22 22:20:13 jaime: Succesuflly created: classicmodels backup
+<13>Nov 22 22:24:29 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-18-42.sql.bz2
+<13>Nov 22 22:24:29 jaime: Succesuflly created: classicmodels backup
+<13>Nov 22 22:30:13 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-18-43.sql.bz2
+<13>Nov 22 22:30:13 jaime: Succesuflly created: classicmodels backup
+<13>Nov 22 22:30:36 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-18-53.sql.bz2
+<13>Nov 22 22:30:36 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:00:05 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-18-58.sql.bz2
+<13>Nov 23 15:00:05 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:03:54 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-20-12.sql.bz2
+<13>Nov 23 15:03:54 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:00 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-24-29.sql.bz2
+<13>Nov 23 15:04:00 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:02 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-30-12.sql.bz2
+<13>Nov 23 15:04:02 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:03 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-22-22-30-36.sql.bz2
+<13>Nov 23 15:04:03 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:03 jaime: ERROR in bzip2 (classicmodels) : 1
+<13>Nov 23 15:04:06 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-00-04.sql.bz2
+<13>Nov 23 15:04:06 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:07 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-03-53.sql.bz2
+<13>Nov 23 15:04:07 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:08 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-00.sql.bz2
+<13>Nov 23 15:04:08 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:09 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-02.sql.bz2
+<13>Nov 23 15:04:09 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:11 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-03.sql.bz2
+<13>Nov 23 15:04:11 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:16 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-06.sql.bz2
+<13>Nov 23 15:04:16 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-07.sql.bz2
+<13>Nov 23 15:04:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:04:39 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-08.sql.bz2
+<13>Nov 23 15:04:39 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:05:13 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-09.sql.bz2
+<13>Nov 23 15:05:13 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:10:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-11.sql.bz2
+<13>Nov 23 15:10:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:20:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-16.sql.bz2
+<13>Nov 23 15:20:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:30:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-17.sql.bz2
+<13>Nov 23 15:30:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:40:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-04-39.sql.bz2
+<13>Nov 23 15:40:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 15:50:17 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-05-13.sql.bz2
+<13>Nov 23 15:50:17 jaime: Succesuflly created: classicmodels backup
+<13>Nov 23 16:00:03 jaime: Max capacity reached: removing /home/jaime/Documents/mysql/dump_classicmodels_2022-11-23-15-10-17.sql.bz2
+<13>Nov 23 16:00:03 jaime: Succesuflly created: classicmodels backup
