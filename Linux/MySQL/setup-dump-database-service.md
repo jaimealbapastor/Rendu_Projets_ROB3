@@ -24,7 +24,8 @@ mysql> GRANT PROCESS ON *.* TO jaime@localhost;
 Créer le fichier [`dump-database.service`](dump-database.service) et le sauvegarder dans `/lib/systemd/system/`
 
 On ajoute:
-```
+
+```service
 [Unit]
 Description=Dump mysql database
 After=network.target
@@ -50,6 +51,7 @@ $ sudo systemctl daemon-reload
 
 Maintenant on active le service et on le démarre.
 ```shell
+$ sudo systemctl enable dump-database.service
 $ sudo systemctl start dump-database.service
 ```
 
@@ -59,3 +61,29 @@ $ sudo systemctl status dump-database.service
 ```
 
 ![15](images/15.png)
+
+## Timer
+
+On créer le fichier [`dump-database.timer`](dump-database.timer) qui a le même nom que `dump-database.service`:
+
+```timer
+[Unit]
+Description=Run every ten minutes
+
+[Timer]
+OnCalendar=*-*-* *:00,10,20,30,40,50:00
+
+[Install]
+WantedBy=timers.target
+```
+
+Et on l'active avec :
+
+```shell
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable dump-database.timer
+$ sudo systemctl start dump-database.timer
+$ sudo systemctl status dump-database.timer
+```
+
+![16](images/16.png)
