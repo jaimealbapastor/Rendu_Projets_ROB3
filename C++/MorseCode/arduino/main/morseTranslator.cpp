@@ -18,10 +18,10 @@ morseTranslator::~morseTranslator() {
  * @param c : the char to translate
  * @return const char*
  */
-const char *morseTranslator::getMorse(char c) {
+const char *morseTranslator::_getMorse(char c) {
   uint8_t i = 0;
-  while (i < this->nbOfChars) {
-    if (this->characters[i] == c) return this->morseCode[i];
+  while (i < this->_nbOfChars) {
+    if (this->_characters[i] == c) return this->_morseCode[i];
     i++;
   }
   return this->nullMorse;
@@ -46,23 +46,23 @@ char *morseTranslator::translate(const char text[], bool spacesBetweenLetters) {
 
   for (uint16_t text_index = 0; text_index < lengthText; text_index++) {
     // strcpy(m, this->getMorse(text[text_index]));
-    m = this->getMorse(text[text_index]);
+    m = this->_getMorse(text[text_index]);
 
     morse_index = 0;
     while (*(m + morse_index) != '\0') {
-      this->translation[translation_index] = *(m + morse_index);
+      this->_translation[translation_index] = *(m + morse_index);
       translation_index++;
       morse_index++;
     }
 
     if (spacesBetweenLetters) {
-      this->translation[translation_index] = ' ';
+      this->_translation[translation_index] = ' ';
       translation_index++;
     }
   }
 
-  for (translation_index; translation_index < this->translationLength; translation_index++)
-    this->translation[translation_index] = '\0';
+  for (translation_index; translation_index < this->_translationLength; translation_index++)
+    this->_translation[translation_index] = '\0';
 
-  return this->translation;
+  return this->_translation;
 }

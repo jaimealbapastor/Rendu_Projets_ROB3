@@ -5,21 +5,25 @@
 const char DOT = '.';
 const char MINUS = '-';
 int8_t stateOfLed = 0;
+
 // === Intervals ====
 const uint16_t DOT_DELAY = 500;     // in milliseconds
 const uint16_t MINUS_DELAY = 1000;  // in milliseconds
 const uint16_t INTERVAL = 750;      // in milliseconds
+
 // ===== Timer ======
 unsigned long startMillis;
 unsigned long currentMillis;
 uint16_t timeToWait = 0;
 int8_t ongoingBlinking = false;
+
 // ===== Morse ======
 morseTranslator MT;
 char* translation = nullptr;
 uint8_t translation_index = 0;
 char currentChar;
 uint8_t incomingBytes = 0;
+
 // ==================
 
 void setup() {
@@ -51,7 +55,7 @@ void loop() {
     Serial.println(input);
 
     // ===Translation====
-    translation = MT.translate(input, true);  // MT.translate returns the pointer of the translation (which is a class variable)
+    translation = MT.translate(input, false);  // MT.translate returns the pointer of the translation (which is a class variable)
     Serial.print("Morse:\t");
     Serial.println(translation);
     translation_index = 0;  // start blinking at the beginning of the translation
