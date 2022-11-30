@@ -1,0 +1,19 @@
+git clone git@github.com:jaimealbapastor/Rendu_Projets_ROB3.git
+git diff
+git status
+
+// add file to stage
+git add <file>
+
+// restore file from stage
+git restore --staged <file>
+
+// see the logs
+git log
+
+// change branch
+git checkout -b robo3-tuto
+
+git commit
+
+git push origin robo3-tuto
