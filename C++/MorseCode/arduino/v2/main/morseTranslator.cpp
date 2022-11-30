@@ -3,15 +3,13 @@
 /**
  * @brief Construct a new morse Translator::morse Translator object
  */
-morseTranslator::morseTranslator()
-{
+morseTranslator::morseTranslator() {
 }
 
 /**
  * @brief Destroy the morse Translator::morse Translator object
  */
-morseTranslator::~morseTranslator()
-{
+morseTranslator::~morseTranslator() {
 }
 
 /**
@@ -20,11 +18,9 @@ morseTranslator::~morseTranslator()
  * @param c : the char to translate
  * @return const char*
  */
-const char *morseTranslator::_getMorse(char c)
-{
+const char *morseTranslator::_getMorse(char c) {
   uint8_t i = 0;
-  while (i < this->_nbOfChars)
-  {
+  while (i < this->_nbOfChars) {
     if (this->_characters[i] == c)
       return this->_morseCode[i];
     i++;
@@ -38,53 +34,49 @@ const char *morseTranslator::_getMorse(char c)
  * @param text : the char array to translate
  * @return char* : the pointer to the translated char array, ends with '\0'
  */
-char *morseTranslator::translate(const char text[])
-{
+char *morseTranslator::translate(const char text[]) {
   uint16_t lengthText = 0;
-  while (text[lengthText] != '\0') // calculate the length of the text
+  while (text[lengthText] != '\0')  // calculate the length of the text
     lengthText++;
 
   const char *m;
   uint8_t morse_index = 0;
   uint16_t translation_index = 0;
 
-  for (uint16_t text_index = 0; text_index < lengthText; text_index++)
-  {
-    if (text[text_index] == ' ')
-      continue; // we will handle spaces only if there is text after it
+  for (uint16_t text_index = 0; text_index < lengthText; text_index++) {
+    if (text[text_index] == ' ')  // we will handle spaces only if there is text after it
+      continue;
 
     // === handle spaces ===
-    if (text_index > 0)
-    {
+    if (text_index > 0) {
       // if the previous character is part of the word, add '...'
       if (text[text_index - 1] != ' ')
         for (uint8_t i = 0; i < 3; i++)
           this->_translation[translation_index++] = this->DOWN;
 
       // if the previous character was a space, add '.......'
-      else if (text[text_index - 1] == ' ')
-      {
+      else if (text[text_index - 1] == ' ') {
         for (uint8_t i = 0; i < 7; i++)
           this->_translation[translation_index++] = this->DOWN;
       }
     }
 
-    m = this->_getMorse(text[text_index]); // m only contains '.' and '-'
+    m = this->_getMorse(text[text_index]);  // m only contains '.' and '-'
     morse_index = 0;
 
-    while (*(m + morse_index) != '\0')
-    {
-      // this->_translation[translation_index] = *(m + morse_index);
+    // change '.-' into '=.==='
+    // m contains '.-' and _translation contains '=.==='
+    while (*(m + morse_index) != '\0') {
 
-      if (translation_index > 0 && this->_translation[translation_index - 1] == this->UP)
-        this->_translation[translation_index++] = this->DOWN;
+      if (translation_index > 0 && this->_translation[translation_index - 1] == this->UP)  // if the previous character is UP ('=')
+        this->_translation[translation_index++] = this->DOWN;                              // add a DOWN ('.')
 
-      if (*(m + morse_index) == this->DOWN)
-      {
+      if (*(m + morse_index) == this->SHORT) {
+        // *(m + morse_index) = '.'
         this->_translation[translation_index++] = this->UP;
-      }
-      else
-      {   // *(m + morse_index) = '-'
+
+      } else {
+        // *(m + morse_index) = '-'
         for (uint8_t i = 0; i < 3; i++)
           this->_translation[translation_index++] = this->UP;
       }
@@ -92,7 +84,9 @@ char *morseTranslator::translate(const char text[])
       morse_index++;
     }
   }
-
+  
+  // refill the rest of the _translation with '\0'
+  // in order to clean the previous translation
   for (translation_index; translation_index < this->_translationLength; translation_index++)
     this->_translation[translation_index] = '\0';
 
