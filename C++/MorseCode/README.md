@@ -1,20 +1,16 @@
-# Comment executer le code ?
+# Différences entre les versions
 
-### - Soit en televersant dans [l'arduino](./arduino/main/)
+## Version 2 sur Arduino
 
-Le code morse s'affichera dans le moniteur serial et à travers des clignotements.
+La première à avoir été faite. La classe `morseTranslator` renvoie une représentation du code morse avec des **points** (clignotements **courts**) et des **tirets** (clignotements **longs**).  
 
-### - Soit dans le [terminal](./terminal/) avec un compilateur c++
+La visualisation dans le terminal serial est:
+![v1](../../Images/v1_arduino.png)
 
-On peut utiliser le compilateur en ligne : [https://www.onlinegdb.com/online_c++_compiler](https://www.onlinegdb.com/online_c++_compiler)  
+## Version 3 sur Arduino
 
-<br/>
-<br/>
+Cette version est un poil plus complexe en termes de codage (dans la classe `morseTranslator`) mais de plus facile utilisation dans le fichier `main.ino`.  
+La classe `morseTranslator` renvoie une représentation du code morse comme un signal temporel de l'état de la led: =.===.=...===.=  
 
-## Attention ! Les codes sont différents
-
-J'ai voulu optimiser la vitesse d'exécution sur le terminal mais la mémoire utilisée est énorme pour l'arduino.  
-Même si la vitesse n'est pas aussi optimisée, j'ai essayé de reduire au max la mémoire en utilisant des listes de caractères et non pas des String.  
-
-Conclusion:  
-Je suis sur que mon code pourrait encore s'améliorer mais il reste tout de même acceptable. Mais le plus important c'est que ça m'a permis d'affiner mes connaissances sur les pointeurs.
+La visualisation dans le terminal serial est:
+![v1](../../Images/v2_arduino.png)
