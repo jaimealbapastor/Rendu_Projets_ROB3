@@ -1,5 +1,5 @@
 #include "morseTranslator.h"
-
+ 
 /**
  * @brief Construct a new morse Translator::morse Translator object
  */
